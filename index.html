@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let deyer = 310
+        let newarr = []
+        const arr = [
+            {
+                man:1,
+                say:70
+            },
+            {
+                man:5,
+                say:4
+            },
+            {
+                man:10,
+                say:3
+            },
+            {
+                man:20,
+                say:7
+            },
+            {
+                man:100,
+                say:3
+            },
+            {
+                man:50,
+                say:10
+            },
+        ]
+        newarr= []
+let str = []
+newarr = arr.sort((a,b) =>b.man  - a.man)
+arr.forEach(element => {
+    if (deyer >= element.man*element.say && element.say) {
+        str.push(`manat:${element.man},say: ${element.say}`)
+        deyer = deyer - element.man*element.say
+    }    
+    else {
+        let say2 = Math.floor(deyer / element.man)
+        if (say2) {
+            
+       str.push(`manat:${element.man},say: ${say2}`)
+       deyer = deyer - element.man*say2
+        }
+    }
+});
+console.log(str);
+
+
+
+    </script>
+</body>
+</html>
